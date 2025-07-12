@@ -1,0 +1,368 @@
+.problem-section {
+    padding: 6rem 0;
+    background: linear-gradient(160deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.problem-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        conic-gradient(from 0deg at 20% 30%, transparent 0deg, rgba(43, 108, 176, 0.1) 45deg, transparent 90deg),
+        conic-gradient(from 180deg at 80% 70%, transparent 0deg, rgba(72, 61, 139, 0.1) 45deg, transparent 90deg);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+
+    h2 {
+        color: #ffffff;
+    }
+}
+
+.p-section-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+.title-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.decoration-line {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+    animation: lineGlow 2s ease-in-out infinite alternate;
+}
+
+.decoration-dot {
+    width: 12px;
+    height: 12px;
+    background: #3b82f6;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+    animation: dotPulse 2s ease-in-out infinite;
+}
+
+.problems-container {
+    position: relative;
+    z-index: 1;
+}
+
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.problem-card {
+    background: rgba(15, 23, 42, 0.8);
+    border: 2px solid rgba(59, 130, 246, 0.2);
+    border-radius: 24px;
+    padding: 0;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    animation: cardFloat 6s ease-in-out infinite;
+}
+
+.problem-card[data-index="1"] {
+    animation-delay: 0s;
+}
+
+.problem-card[data-index="2"] {
+    animation-delay: 0.5s;
+}
+
+.problem-card[data-index="3"] {
+    animation-delay: 1s;
+}
+
+.problem-card[data-index="4"] {
+    animation-delay: 1.5s;
+}
+
+.problem-card[data-index="5"] {
+    animation-delay: 2s;
+}
+
+.problem-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transition: left 0.5s ease;
+    z-index: 1;
+}
+
+.problem-card:hover::before {
+    left: 100%;
+}
+
+.problem-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 50px rgba(59, 130, 246, 0.3);
+}
+
+.card-header {
+    padding: 2rem 2rem 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.problem-icon {
+    font-size: 3.5rem;
+    display: block;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    animation: iconBounce 3s ease-in-out infinite;
+}
+
+.icon-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent);
+    border-radius: 50%;
+    z-index: 1;
+    animation: iconBgPulse 2s ease-in-out infinite;
+}
+
+.card-content {
+    padding: 0 2rem 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.problem-card h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+}
+
+.problem-card p {
+    color: #cbd5e1;
+    line-height: 1.7;
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.card-number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: rgba(59, 130, 246, 0.4);
+    z-index: 3;
+    animation: numberGlow 3s ease-in-out infinite alternate;
+}
+
+.connecting-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.connection-svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+}
+
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.float-element {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1), transparent);
+    animation: floatAround 20s linear infinite;
+}
+
+.float-1 {
+    width: 100px;
+    height: 100px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.float-2 {
+    width: 60px;
+    height: 60px;
+    top: 60%;
+    right: 20%;
+    animation-delay: 5s;
+}
+
+.float-3 {
+    width: 80px;
+    height: 80px;
+    bottom: 20%;
+    left: 70%;
+    animation-delay: 10s;
+}
+
+@keyframes titlePulse {
+    0% {
+        text-shadow: 0 0 30px rgba(43, 108, 176, 0.3);
+    }
+
+    100% {
+        text-shadow: 0 0 50px rgba(43, 108, 176, 0.6);
+    }
+}
+
+@keyframes lineGlow {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes dotPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes cardFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes iconBounce {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes iconBgPulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.5;
+    }
+}
+
+@keyframes numberGlow {
+    0% {
+        color: rgba(59, 130, 246, 0.4);
+    }
+
+    100% {
+        color: rgba(59, 130, 246, 0.8);
+    }
+}
+
+@keyframes floatAround {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(30px, -30px) rotate(90deg);
+    }
+
+    50% {
+        transform: translate(-30px, -60px) rotate(180deg);
+    }
+
+    75% {
+        transform: translate(-60px, 30px) rotate(270deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .problems-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .problem-card {
+        margin: 0 1rem;
+    }
+}

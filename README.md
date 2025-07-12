@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Mintellect: Tokenizing Patent Potential 💡
+Accelerate Invention. Amplify Impact.
+Every year, groundbreaking innovations in India face a daunting 3-5 year patent approval limbo. This period of inactivity stifles progress, delays startup growth, leaves academic research untapped, and deters crucial investment. Ideas that could transform industries and lives sit idle, their potential locked away.
 
-## Getting Started
+Mintellect is the paradigm shift.
 
-First, run the development server:
+We are pioneering the world's first blockchain-powered marketplace engineered to unlock the latent value of pending patents. By tokenizing patent applications as verified digital assets – a powerful fusion of Non-Fungible Tokens (NFTs) for unique ownership and ERC-20 usage tokens for fractional rights – Mintellect enables early licensing, usage, and collaborative development of innovations before the patent is formally granted.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Our mission is clear: to transmute idle intellectual property into active opportunities. We bridge visionary inventors with strategic investors, connect groundbreaking research with real-world impact, and align transformative ideas with the industries that desperately need them.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔎 What We Solve:
+3-5 Year Patent Delays: Innovations often lose relevance or become obsolete, missing critical market windows.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Lost Startup Growth: Prolonged delays directly correlate with reduced employment (21%) and sales (28%) annually for nascent ventures.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Idle Academic Research: A staggering 90%+ of university patents remain unused, their potential locked within institutional walls.
 
-## Learn More
+Investor Hesitancy: The absence of granted IP acts as a significant deterrent for early-stage capital, stifling innovation funding.
 
-To learn more about Next.js, take a look at the following resources:
+Legal Uncertainty: Without enforceable rights, innovators lack the leverage to negotiate and commercialize effectively.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+✨ How Mintellect Works:
+Leveraging the immutable power of blockchain and the intelligence of AI, Mintellect redefines IP commercialization:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Patent Verification: Inventors securely list their pending patent applications. We rigorously verify these through official, authoritative databases.
 
-## Deploy on Vercel
+Tokenization: Each verified application is transformed into a unique NFT, representing its distinct identity and ownership. Alongside, ERC-20 tokens are issued, enabling the granular, fractionalized licensing of usage rights.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Smart Licensing: Usage rights and agreements are meticulously embedded within smart contracts – ensuring fast, secure, transparent, and programmable transactions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Marketplace Matching: Our intuitive platform connects companies, startups, and collaborators with the precise IP they need, fostering confident and efficient licensing.
+
+AI Assistance: Our integrated AI engine provides intelligent suggestions for potential applications, optimal commercialization pathways, and identifies synergistic partners, maximizing IP impact.
+
+👨‍🎓 For Academia:
+Showcase your institutional IP early and to a global audience.
+
+Generate pre-grant licensing revenue, fueling further research.
+
+Attract invaluable industry collaboration and real-world application for your discoveries.
+
+🚀 For Startups:
+Monetize your pending patents, turning potential into profit.
+
+Raise IP-backed funding, leveraging your innovation as collateral.
+
+License or partner on your IP without relinquishing ownership.
+
+💼 For Corporations:
+Gain early access to cutting-edge technologies and disruptive innovations.
+
+Fast-track your internal innovation pipelines with external, verified IP.
+
+Significantly reduce friction and accelerate the IP acquisition process.
+
+📈 For Investors:
+Discover a new class of IP-backed digital assets with high growth potential.
+
+Stake your claim in high-potential inventions, diversifying your portfolio.
+
+Enable underfunded innovations to reach their full market potential.
+
+🚀 Backed by Blockchain. Boosted by AI. Built for Impact.
+Mintellect is more than just a marketplace; it's a movement to fundamentally reimagine how the world unlocks and leverages ideas. We are launching in India, but our vision is boundless. With a clear roadmap to scale into a universal platform for intellectual property tokenization, we are committed to shortening the path from a brilliant idea to tangible, transformative impact.
+
+Join us to fuel the future of innovation.
+
+Technologies & Concepts:
+
+Blockchain: Ethereum (NFTs, ERC-20 Tokens, Smart Contracts)
+
+Artificial Intelligence: For IP analysis, matching, and commercialization insights.
+
+Decentralized Finance (DeFi) Principles: For tokenized asset management.
+
+Intellectual Property (IP) Law & Management
