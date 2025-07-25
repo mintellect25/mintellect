@@ -2,12 +2,10 @@
 import React, { useState, useEffect } from "react";
 import './navbar.css'
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const router = useRouter();
 
     // Handle scroll effect
     useEffect(() => {
@@ -41,10 +39,6 @@ export default function NavBar() {
         }
         closeMenu();
     };
-    function formatAddress(address: string) {
-        if (!address || address.length < 10) return address;
-        return `${address.slice(0, 5)}...${address.slice(-5)}`;
-    }
 
     return (
         <header className={isScrolled ? 'scrolled' : ''}>

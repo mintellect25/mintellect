@@ -40,7 +40,7 @@ export default function AboutSection() {
                                 <span className="about-highlight-text">Patents stuck in approval limbo annually</span>
                             </div>
                             <p className="about-main-text">
-                                Every year, tens of thousands of promising innovations in India are locked in a 3–5 year patent approval limbo. During this period, ideas that could transform industries and lives sit idle. Startups stall. Research stagnates. Investments hesitate. And progress halts.
+                                Every year, tens of thousands of promising innovations in India are locked in a 3-5 year patent approval limbo. During this period, ideas that could transform industries and lives sit idle. Startups stall. Research stagnates. Investments hesitate. And progress halts.
                             </p>
                         </div>
 
@@ -52,7 +52,7 @@ export default function AboutSection() {
                                 <strong>Mintellect is the solution.</strong>
                             </p>
                             <p className="about-main-text">
-                                We are the world's first blockchain-powered marketplace dedicated to unlocking the value of pending patents. By tokenizing patent applications as verified digital assets (NFTs + usage tokens), Mintellect enables early licensing, usage, and collaboration on innovations <strong>before</strong> the patent is granted.
+                                We are the world{`&apos;`}s first blockchain-powered marketplace dedicated to unlocking the value of pending patents. By tokenizing patent applications as verified digital assets (NFTs + usage tokens), Mintellect enables early licensing, usage, and collaboration on innovations <strong>before</strong> the patent is granted.
                             </p>
                         </div>
 

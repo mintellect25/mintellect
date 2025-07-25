@@ -25,16 +25,18 @@
     margin-bottom: 4rem;
     position: relative;
     z-index: 2;
+    padding: 0 1rem;
+}
 
-    h2 {
-        color: #ffffff;
-    }
+.section-header h2 {
+    color: #ffffff;
 }
 
 .p-section-title {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 800;
     margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
 .title-decoration {
@@ -46,7 +48,7 @@
 }
 
 .decoration-line {
-    width: 80px;
+    width: clamp(40px, 10vw, 80px);
     height: 2px;
     background: linear-gradient(90deg, transparent, #3b82f6, transparent);
     animation: lineGlow 2s ease-in-out infinite alternate;
@@ -64,11 +66,12 @@
 .problems-container {
     position: relative;
     z-index: 1;
+    padding: 0 1rem;
 }
 
 .problems-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
     gap: 3rem;
     max-width: 1400px;
     margin: 0 auto;
@@ -85,6 +88,7 @@
     overflow: hidden;
     backdrop-filter: blur(20px);
     animation: cardFloat 6s ease-in-out infinite;
+    width: 100%;
 }
 
 .problem-card[data-index="1"] {
@@ -132,13 +136,13 @@
 }
 
 .card-header {
-    padding: 2rem 2rem 1rem;
+    padding: clamp(1.5rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2rem) 1rem;
     position: relative;
     z-index: 2;
 }
 
 .problem-icon {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
     display: block;
     text-align: center;
     position: relative;
@@ -151,8 +155,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
+    width: clamp(60px, 12vw, 80px);
+    height: clamp(60px, 12vw, 80px);
     background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent);
     border-radius: 50%;
     z-index: 1;
@@ -160,24 +164,25 @@
 }
 
 .card-content {
-    padding: 0 2rem 2rem;
+    padding: 0 clamp(1.5rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2rem);
     position: relative;
     z-index: 2;
 }
 
 .problem-card h3 {
     color: #ffffff;
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     font-weight: 700;
     margin-bottom: 1rem;
     text-align: center;
     text-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+    line-height: 1.3;
 }
 
 .problem-card p {
     color: #cbd5e1;
     line-height: 1.7;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     text-align: center;
     opacity: 0.9;
 }
@@ -186,7 +191,7 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     font-weight: 800;
     color: rgba(59, 130, 246, 0.4);
     z-index: 3;
@@ -227,29 +232,30 @@
 }
 
 .float-1 {
-    width: 100px;
-    height: 100px;
+    width: clamp(60px, 15vw, 100px);
+    height: clamp(60px, 15vw, 100px);
     top: 20%;
     left: 10%;
     animation-delay: 0s;
 }
 
 .float-2 {
-    width: 60px;
-    height: 60px;
+    width: clamp(40px, 10vw, 60px);
+    height: clamp(40px, 10vw, 60px);
     top: 60%;
     right: 20%;
     animation-delay: 5s;
 }
 
 .float-3 {
-    width: 80px;
-    height: 80px;
+    width: clamp(50px, 12vw, 80px);
+    height: clamp(50px, 12vw, 80px);
     bottom: 20%;
     left: 70%;
     animation-delay: 10s;
 }
 
+/* Animations */
 @keyframes titlePulse {
     0% {
         text-shadow: 0 0 30px rgba(43, 108, 176, 0.3);
@@ -352,17 +358,220 @@
     }
 }
 
+/* Responsive Breakpoints */
+
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+    .problem-section {
+        padding: 4rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .problems-grid {
+        gap: 2.5rem;
+        padding: 0 1rem;
+    }
+
+    .problem-card:hover {
+        transform: translateY(-8px) scale(1.01);
+    }
+}
+
+/* Tablets */
 @media (max-width: 768px) {
+    .problem-section {
+        padding: 3rem 0;
+        min-height: auto;
+    }
+
+    .section-header {
+        margin-bottom: 2.5rem;
+        padding: 0 1.5rem;
+    }
+
+    .problems-container {
+        padding: 0 1.5rem;
+    }
+
     .problems-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
+        max-width: 600px;
     }
 
     .problem-card {
-        margin: 0 1rem;
+        border-radius: 20px;
+    }
+
+    .problem-card:hover {
+        transform: translateY(-6px) scale(1.01);
+    }
+
+    /* Reduce floating elements on tablets */
+    .float-element {
+        opacity: 0.7;
+    }
+
+    /* Simplify animations on tablets */
+    @media (prefers-reduced-motion: reduce) {
+        .problem-card {
+            animation: none;
+        }
+
+        .float-element {
+            animation: none;
+        }
+
+        .problem-icon {
+            animation: none;
+        }
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .problem-section {
+        padding: 2rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+
+    .problems-container {
+        padding: 0 1rem;
+    }
+
+    .problems-grid {
+        gap: 1.5rem;
+    }
+
+    .problem-card {
+        border-radius: 16px;
+        margin: 0;
+    }
+
+    .problem-card:hover {
+        transform: translateY(-4px) scale(1.005);
+    }
+
+    .card-header {
+        padding: 1.5rem 1.5rem 1rem;
+    }
+
+    .card-content {
+        padding: 0 1.5rem 1.5rem;
+    }
+
+    .title-decoration {
+        gap: 0.5rem;
+    }
+
+    /* Hide floating elements on mobile for better performance */
+    .floating-elements {
+        display: none;
+    }
+
+    /* Disable complex animations on mobile */
+    .problem-card {
+        animation: none;
+    }
+
+    .problem-icon {
+        animation: none;
+    }
+
+    .icon-bg {
+        animation: none;
+    }
+}
+
+/* Small mobile phones */
+@media (max-width: 360px) {
+    .problem-section {
+        padding: 1.5rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .problems-container {
+        padding: 0 0.75rem;
+    }
+
+    .problems-grid {
+        gap: 1.25rem;
+    }
+
+    .card-header {
+        padding: 1.25rem 1.25rem 0.75rem;
+    }
+
+    .card-content {
+        padding: 0 1.25rem 1.25rem;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .problem-card {
+        border-width: 1px;
+    }
+}
+
+/* Dark mode preferences */
+@media (prefers-color-scheme: dark) {
+    .problem-section {
+        background: linear-gradient(160deg, #000000 0%, #0f172a 25%, #1e293b 50%, #334155 75%, #475569 100%);
+    }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .problem-card:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Print styles */
+@media print {
+    .problem-section {
+        background: white !important;
+        color: black !important;
+        padding: 2rem 0;
+    }
+
+    .problem-card {
+        background: white !important;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+
+    .floating-elements,
+    .connecting-lines {
+        display: none;
+    }
+
+    .problem-card h3,
+    .section-header h2 {
+        color: black !important;
+    }
+
+    .problem-card p {
+        color: #333 !important;
     }
 }

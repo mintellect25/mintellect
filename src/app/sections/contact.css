@@ -1,36 +1,47 @@
 .cta-section {
-    width: 84vw;
+    width: min(84vw, 1200px);
     margin: 0 auto;
-    padding: 50px;
-
+    padding: clamp(2rem, 5vw, 3.125rem);
 }
 
 .contact-container {
-    padding: 20px 20px;
+    padding: clamp(1.25rem, 4vw, 2.5rem);
     background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #db2777 100%);
     text-align: center;
     color: white;
     position: relative;
     overflow: hidden;
-    min-height: 10vh;
-    border-radius: 20px;
+    min-height: clamp(200px, 15vh, 300px);
+    border-radius: clamp(12px, 2vw, 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cta-content {
     position: relative;
     z-index: 2;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .cta-section h2 {
-    font-size: 32px;
-    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
     animation: fadeIn 1s ease-out;
+    line-height: 1.2;
+    font-weight: 700;
 }
 
 .cta-section p {
-    font-size: 14px;
-    margin-bottom: 2rem;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
     opacity: 0.9;
+    line-height: 1.5;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cta-section .cta-button {
@@ -38,67 +49,278 @@
     color: white;
     border: 2px solid white;
     backdrop-filter: blur(10px);
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.cta-section .cta-button:hover::before {
+    left: 100%;
 }
 
 .cta-section .cta-button:hover {
     background: white;
-    color: #667eea;
+    color: #7c3aed;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cta-section .cta-button:active {
+    transform: translateY(0);
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translateY(20px);
     }
 
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* Mobile Responsive */
+/* Large Desktop */
+@media (min-width: 1200px) {
+    .cta-section {
+        width: 80vw;
+        padding: 4rem;
+    }
+
+    .contact-container {
+        padding: 3rem;
+        border-radius: 24px;
+    }
+}
+
+/* Desktop */
+@media (max-width: 1024px) {
+    .cta-section {
+        width: 90vw;
+        padding: 2.5rem;
+    }
+
+    .contact-container {
+        padding: 2rem;
+        border-radius: 18px;
+    }
+}
+
+/* Tablet */
 @media (max-width: 768px) {
     .cta-section {
-        padding: 3rem 0;
+        width: 95vw;
+        padding: 2rem 1rem;
     }
 
-    .container {
-        width: 90%;
-        padding: 0 1rem;
+    .contact-container {
+        padding: 1.5rem;
+        border-radius: 16px;
+        min-height: 180px;
     }
 
     .cta-section h2 {
-        font-size: 2rem;
-        line-height: 1.2;
+        margin-bottom: 0.875rem;
     }
 
     .cta-section p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .cta-section .cta-button {
+        padding: 0.875rem 1.75rem;
+        border-radius: 40px;
     }
 }
 
-@media (max-width: 480px) {
+/* Mobile Landscape */
+@media (max-width: 640px) {
     .cta-section {
-        padding: 2rem 0;
+
+        padding: 1.5rem 0.75rem;
     }
 
-    .container {
-        width: 90%;
-        padding: 0 0.5rem;
+    .contact-container {
+        padding: 1.25rem;
+        border-radius: 14px;
+        min-height: 160px;
+    }
+
+    .cta-content {
+        max-width: 90%;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+    .cta-section {
+        padding: 1rem 0.5rem;
+    }
+
+    .contact-container {
+        padding: 1rem;
+        border-radius: 12px;
+        min-height: 140px;
     }
 
     .cta-section h2 {
-        font-size: 1.5rem;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.625rem;
+        font-weight: 800;
     }
 
     .cta-section p {
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1.25rem;
+        font-weight: 400;
     }
 
     .cta-section .cta-button {
         padding: 0.75rem 1.5rem;
-        font-size: 0.9rem;
+        font-size: 0.875rem;
+        border-radius: 30px;
+        min-width: 140px;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+    .cta-section {
+        padding: 0.75rem 0.25rem;
+    }
+
+    .contact-container {
+        padding: 0.875rem;
+        border-radius: 10px;
+        min-height: 120px;
+    }
+
+    .cta-section h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .cta-section p {
+        margin-bottom: 1rem;
+    }
+
+    .cta-section .cta-button {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.8125rem;
+        min-width: 120px;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .contact-container {
+        min-height: 80px;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .cta-section h2 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .cta-section p {
+        font-size: 0.8125rem;
+        margin-bottom: 1rem;
+    }
+
+    .cta-section .cta-button {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.8125rem;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .contact-container {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .cta-section .cta-button:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        transform: none;
+        box-shadow: none;
+    }
+
+    .cta-section .cta-button:active {
+        background: white;
+        color: #7c3aed;
+        transform: scale(0.98);
+    }
+
+    .cta-section .cta-button::before {
+        display: none;
+    }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .cta-section h2 {
+        animation: none;
+    }
+
+    .cta-section .cta-button {
+        transition: none;
+    }
+
+    .cta-section .cta-button::before {
+        transition: none;
+    }
+
+    .cta-section .cta-button:hover {
+        transform: none;
+    }
+
+    .cta-section .cta-button:active {
+        transform: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .cta-section {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .contact-container {
+        background: #7c3aed !important;
+        color: white !important;
+        border: 2px solid #7c3aed;
+        border-radius: 8px;
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    .cta-section .cta-button {
+        background: transparent !important;
+        color: #7c3aed !important;
+        border: 2px solid #7c3aed;
     }
 }
